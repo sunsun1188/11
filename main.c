@@ -3,11 +3,22 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-void main(void) {
-	int i=4;
+int main(void) {
+	int i;
+	int grade[5];
+	int average=0;
 	
-	int *pi = &i;
-	char *pc = &i;
+	for (i=0;i<5;i++) {
+		
+		printf("input value [%i] = ",i);
+		scanf("%d", &grade[i]);
+	}
+	for (i=0;i<5;i++) {
+		
+		printf("grade[%i] = %i\n",i,*(grade+i));
+		average = average + *(grade+i);
+	}
+	printf("\navereage = %i\n", average/5);
 	
-	printf("%i, %i, %i\n",i, *pi, *pc);
+	return 0;
 }
