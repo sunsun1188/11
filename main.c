@@ -1,13 +1,14 @@
-void swap(int *x, int *y) {
-    int temp;
-    temp = *x;
-    *x = *y;
-    *y = temp;
-}
-
-void main(void) {
-   int a=3;
-   int b=5;
-   swap(&a, &b);
-   printf("a: %i, b:%i", a, b);  
+int main(void) {
+	int i=100;
+	int* p= &i;
+	int** q= &p;
+	
+	*p =200;
+	printf("i = %d, *p = %d, **q = %d\n", i, *p, **q);
+	
+	**q = 300;
+	printf("i = %d, *p = %d, **q = %d\n", i, *q, **q);
+	
+	return 0;
+	
 }
