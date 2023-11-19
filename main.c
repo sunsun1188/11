@@ -1,23 +1,19 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
 int main(void) {
-	char*pc;
-	int*pi;
-	double*pd;
+	int i=10;
+	char c= 'a';
 	
-	pc = (char *)10000;
-	pi = (int *)10000;
-	pd = (double *)10000;
+	int* iptr;
+	iptr = &i;
 	
-	printf("증가 전: pc = %d, pi = %d, pd = %d\n",pc, pi, pd);
+	char* cptr;
+	cptr = &c;
 	
-	pc++;
-	pi++;
-	pd++;
-	printf("증가 후: pc = %d, pi = %d. pd = %d\n", pc, pi, pd);
+	int* iptr2;
+	iptr2 = iptr;
 	
-	return 0;
+	printf("i : %p\n%p (size: %i)\n", iptr, &i, sizeof(iptr));
+	printf("c : %p\n%p (size: %i)\n", cptr, &c, sizeof(cptr));
+	printf("iptr2: %p, %i\n", iptr2, *iptr2);
+	
+	return 0;	
 }
